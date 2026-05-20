@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy - ClinicDesk</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md sticky-top px-3 px-md-5">
+  <a class="navbar-brand d-flex align-items-center" href="index.html">
+    <span class="logo-icon">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+        <path d="M8 2v12M2 8h12" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+      </svg>
+    </span>
+    ClinicDesk
+  </a>
+  <div class="collapse navbar-collapse">
+    <ul class="navbar-nav ms-auto">
+      <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+      <li class="nav-item ms-md-2">
+        <a class="btn-blue" href="https://clinic-app-rouge.vercel.app/dashboard" target="_blank" rel="noopener noreferrer">Open app &rarr;</a>
+      </li>
+      <li class="nav-item ms-md-1"><button id="dark-toggle" onclick="toggleDark()">🌙 Dark</button></li>
+    </ul>
+  </div>
+</nav>
+
+<section style="padding:60px 0 80px;">
+  <div class="container" style="max-width:740px;">
+    <h1 style="font-size:2rem; margin-bottom:0.5rem;">Privacy Policy</h1>
+    <p class="text-muted" style="font-size:0.88rem; margin-bottom:2.5rem;">Last updated: May 2026</p>
+
+    <div class="article-body">
+
+      <h2>1. Who we are</h2>
+      <p>ClinicDesk is a student project developed as part of the Web Design &amp; UX course at Technische Universität Berlin, 2026. The application is available at <a href="https://clinic-app-rouge.vercel.app/dashboard" style="color:#1a73e8;">clinic-app-rouge.vercel.app</a>.</p>
+
+      <h2>2. What data we collect</h2>
+      <p>When you use ClinicDesk, we may collect the following types of data: account information (name, email, clinic name), patient records entered by clinic staff, appointment and billing data, and basic usage information such as login times.</p>
+
+      <h2>3. How we use your data</h2>
+      <p>Data entered into ClinicDesk is used solely to provide the clinic management features described on this website. We do not sell, rent, or share your data with third parties for marketing purposes.</p>
+
+      <h2>4. Data isolation</h2>
+      <p>Each clinic's data is fully isolated. Staff members can only access data belonging to the clinic they have joined. No clinic can see another clinic's patients, appointments, or records.</p>
+
+      <h2>5. Cookies</h2>
+      <p>This website uses a cookie to remember your preference for dark mode and whether you have accepted this cookie notice. No tracking or advertising cookies are used.</p>
+
+      <h2>6. Your rights under GDPR</h2>
+      <p>If you are based in the European Union, you have the right to access, correct, or request deletion of any personal data we hold about you. To exercise these rights, contact us using the form on the <a href="index.html#contact" style="color:#1a73e8;">contact page</a>.</p>
+
+      <h2>7. Data storage</h2>
+      <p>Application data is stored via Vercel and associated cloud infrastructure. We take reasonable technical measures to protect data in transit and at rest.</p>
+
+      <h2>8. Changes to this policy</h2>
+      <p>We may update this policy from time to time. The date at the top of this page will reflect the most recent update.</p>
+
+      <p style="margin-top:2rem;"><a href="index.html" style="color:#1a73e8;">&larr; Back to home</a></p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <strong style="color:#fff;">ClinicDesk</strong> &copy; 2026 &mdash;
+    <a href="privacy.html">Privacy Policy</a> &middot;
+    <a href="terms.html">Terms of Service</a>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  function toggleDark() {
+    var isDark = document.body.classList.toggle('dark');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    document.getElementById('dark-toggle').textContent = isDark ? '☀ Light' : '🌙 Dark';
+  }
+  if (localStorage.getItem('theme') === 'dark') {
+    document.body.classList.add('dark');
+    document.getElementById('dark-toggle').textContent = '☀ Light';
+  }
+</script>
+</body>
+</html>

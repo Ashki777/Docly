@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ClinicDesk — Clinic Management Software</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- COOKIE BANNER -->
+<div id="cookie-banner">
+  <span>We use cookies to improve your experience. By continuing you accept our <a href="privacy.html">Privacy Policy</a>.</span>
+  <button id="cookie-accept" onclick="acceptCookies()">Accept</button>
+</div>
+
+<!-- NAV -->
+<nav class="navbar navbar-expand-md sticky-top px-3 px-md-5">
+  <a class="navbar-brand d-flex align-items-center" href="index.html">
+    <span class="logo-icon">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+        <path d="M8 2v12M2 8h12" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+      </svg>
+    </span>
+    ClinicDesk
+  </a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="nav">
+    <ul class="navbar-nav ms-auto align-items-md-center gap-md-1">
+      <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+      <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+      <li class="nav-item"><a class="nav-link" href="#how-it-works">How it works</a></li>
+      <li class="nav-item"><a class="nav-link" href="#pricing">Pricing</a></li>
+      <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+      <li class="nav-item"><a class="nav-link" href="features.html">Docs</a></li>
+      <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      <li class="nav-item ms-md-2">
+        <a class="btn-blue" href="https://clinic-app-rouge.vercel.app/dashboard" target="_blank" rel="noopener noreferrer">Open app &rarr;</a>
+      </li>
+      <li class="nav-item ms-md-1"><button id="dark-toggle" onclick="toggleDark()">🌙 Dark</button></li>
+    </ul>
+  </div>
+</nav>
+
+
+<!-- HERO -->
+<section id="hero">
+  <div class="container">
+    <div class="row align-items-center gy-5">
+      <div class="col-md-5">
+        <p class="overline">Clinic Management Software</p>
+        <h1>Run your clinic,<br>not your paperwork.</h1>
+        <p class="hero-sub mt-3 mb-4">
+          One place for patient records, appointments, billing, and analytics.
+          Built for clinic owners and their staff.
+        </p>
+        <div class="d-flex gap-3 flex-wrap">
+          <a href="https://clinic-app-rouge.vercel.app/dashboard" target="_blank" rel="noopener noreferrer" class="btn-main">Try it free &rarr;</a>
+          <a href="#features" class="btn-border">See features</a>
+        </div>
+        <p class="hero-small mt-3">No credit card required &middot; GDPR compliant &middot; Free to start</p>
+      </div>
+      <div class="col-md-7">
+        <div class="browser-frame">
+          <div class="browser-bar">
+            <span class="browser-dot"></span>
+            <span class="browser-dot"></span>
+            <span class="browser-dot"></span>
+            <div class="browser-url">clinic-app-rouge.vercel.app</div>
+          </div>
+          <div class="browser-content">
+            <img src="screenshots/dashboard.png" alt="ClinicDesk dashboard showing today's appointments and quick actions" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- FEATURES -->
+<section id="features">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2>Everything your clinic needs</h2>
+      <p class="text-muted" style="max-width:500px; margin:0.5rem auto 0;">Patient records, appointments, billing, and analytics — all connected.</p>
+    </div>
+
+    <!-- Feature 1: Patient profiles — text left, image right -->
+    <div class="feature-row">
+      <div class="feature-text">
+        <p class="overline">Patient Management</p>
+        <h3 class="feature-heading">A complete profile for every patient</h3>
+        <p class="feature-desc">Every patient gets one unified profile with nine tabs — from allergies and chronic conditions to prescriptions, lab results, uploaded files, and billing. Everything in one place, no switching between systems.</p>
+        <ul class="feature-list">
+          <li>Pre-clinic history: allergies, conditions, previous surgeries</li>
+          <li>Visit records and clinical notes per appointment</li>
+          <li>Prescriptions, lab orders, and file uploads</li>
+          <li>Billing records and payment tracking per patient</li>
+        </ul>
+      </div>
+      <div class="feature-visual">
+        <div class="screenshot-wrap">
+          <img src="screenshots/patients.png" alt="ClinicDesk patient list showing patient cards with profile and blood type" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Feature 2: Analytics — image left, text right -->
+    <div class="feature-row reverse">
+      <div class="feature-visual">
+        <div class="screenshot-wrap">
+          <img src="screenshots/analytics.png" alt="ClinicDesk analytics showing appointment trends and revenue breakdown" />
+        </div>
+      </div>
+      <div class="feature-text">
+        <p class="overline">Insights</p>
+        <h3 class="feature-heading">Understand how your clinic is performing</h3>
+        <p class="feature-desc">Appointment trends, revenue, patient growth, and status breakdowns — filtered by 3 months, 6 months, or a full year. No spreadsheets, no manual calculations.</p>
+        <ul class="feature-list">
+          <li>Appointment trends over the last 12 months</li>
+          <li>Status breakdown: completed, cancelled, scheduled</li>
+          <li>Total revenue and outstanding balance at a glance</li>
+          <li>Patient count and visit frequency over time</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Feature 3: Appointments — text only, 2 columns -->
+    <div class="feature-row-text">
+      <div class="feature-text" style="max-width:100%;">
+        <p class="overline">Scheduling</p>
+        <h3 class="feature-heading">Appointments that actually work</h3>
+      </div>
+      <div class="row g-4 mt-1">
+        <div class="col-md-6">
+          <p class="feature-desc">A calendar layout with a day view on the left and a schedule grid on the right. See the full day at a glance, book new patients on the spot, and check them in without any paperwork.</p>
+        </div>
+        <div class="col-md-6">
+          <ul class="feature-list">
+            <li>Search existing patients with autocomplete — auto-fills their details</li>
+            <li>Register new patients directly from the booking modal</li>
+            <li>Track appointment type, duration, and check-in time</li>
+            <li>Click any patient to open their full profile instantly</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- HOW IT WORKS -->
+<section id="how-it-works" class="gray-bg">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2>How it works</h2>
+      <p class="text-muted">Set up in minutes, use it every day.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="my-card">
+          <div class="step-num">1</div>
+          <h3>Create your clinic</h3>
+          <p class="text-muted small mt-2" style="line-height:1.7;">Go through the short onboarding flow, set your clinic name and specialty, and your account is ready in about two minutes.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="my-card">
+          <div class="step-num">2</div>
+          <h3>Invite your staff</h3>
+          <p class="text-muted small mt-2" style="line-height:1.7;">Share the invite code with nurses and receptionists. They join instantly and only see your clinic's data — nothing else.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="my-card">
+          <div class="step-num">3</div>
+          <h3>Start managing patients</h3>
+          <p class="text-muted small mt-2" style="line-height:1.7;">Add patients, book appointments, write visit notes, manage prescriptions, and track billing — all from one screen.</p>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-5">
+      <a href="https://clinic-app-rouge.vercel.app/dashboard" target="_blank" rel="noopener noreferrer" class="btn-main">Get started free &rarr;</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2>What people say</h2>
+    </div>
+    <div class="row g-4">
+
+      <div class="col-md-4">
+        <div class="tcard">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <blockquote>"Before ClinicDesk we were writing everything in notebooks. Now I can pull up any patient's full history in seconds. It has changed how we run the clinic."</blockquote>
+          <div class="tauthor">
+            <div class="tavatar">MO</div>
+            <div>
+              <p class="tname">Dr. Mehmet Ozturk</p>
+              <p class="trole">Clinic Owner, Istanbul</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="tcard">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <blockquote>"I can see the whole day at a glance, book a new patient in under a minute, and check them in without any paperwork. It is exactly what a front desk needs."</blockquote>
+          <div class="tauthor">
+            <div class="tavatar" style="background:#2a9d6f;">SL</div>
+            <div>
+              <p class="tname">Sofia Larsson</p>
+              <p class="trole">Clinic Receptionist, Stockholm</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="tcard">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <blockquote>"The billing tab saves us so much time. Unpaid invoices are visible on the dashboard now and nothing gets forgotten. We should have had this two years ago."</blockquote>
+          <div class="tauthor">
+            <div class="tavatar" style="background:#e07b39;">AN</div>
+            <div>
+              <p class="tname">Amara Nwosu</p>
+              <p class="trole">Practice Nurse, Lagos</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- PRICING -->
+<section id="pricing" class="gray-bg">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2>Pricing</h2>
+      <p class="text-muted">Simple and transparent. No hidden fees.</p>
+    </div>
+    <div class="row g-4 justify-content-center">
+
+      <div class="col-md-4">
+        <div class="pricing-card">
+          <h3 style="font-size:1.1rem;">Free</h3>
+          <div class="price-num mt-2">€0</div>
+          <p class="price-period">forever</p>
+          <p class="price-desc">For small clinics getting started. No credit card required.</p>
+          <ul class="price-features">
+            <li>Up to 2 staff members</li>
+            <li>Up to 50 patients</li>
+            <li>Appointments and dashboard</li>
+            <li>Patient profiles (9 tabs)</li>
+            <li>Basic analytics</li>
+          </ul>
+          <a href="https://clinic-app-rouge.vercel.app/dashboard" target="_blank" rel="noopener noreferrer" class="btn-border d-block text-center">Get started free</a>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="pricing-card featured">
+          <span class="pricing-badge">Most popular</span>
+          <h3 style="font-size:1.1rem;">Clinic</h3>
+          <div class="price-num mt-2">Contact us</div>
+          <p class="price-period">per clinic / month</p>
+          <p class="price-desc">For growing clinics that need the full feature set.</p>
+          <ul class="price-features">
+            <li>Unlimited staff members</li>
+            <li>Unlimited patients</li>
+            <li>Full billing and invoicing</li>
+            <li>File uploads and lab records</li>
+            <li>Advanced analytics</li>
+            <li>Priority support</li>
+          </ul>
+          <a href="#contact" class="btn-main d-block text-center">Get a quote</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- CTA -->
+<div class="cta-strip">
+  <div class="container">
+    <h2>Start managing your clinic properly.</h2>
+    <p>Free to start. No credit card. Takes two minutes to set up.</p>
+    <a href="https://clinic-app-rouge.vercel.app/dashboard" target="_blank" rel="noopener noreferrer" class="btn-white">Open ClinicDesk free &rarr;</a>
+  </div>
+</div>
+
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2>Frequently asked questions</h2>
+    </div>
+    <div style="max-width:660px; margin:0 auto;">
+
+      <button class="faq-btn" onclick="toggleFAQ(this)">How do staff members join my clinic? <span>+</span></button>
+      <div class="faq-answer">When you create a clinic, ClinicDesk generates a unique invite code. Share it with your staff and they join directly. You can regenerate the code at any time from the Settings page.</div>
+
+      <button class="faq-btn" onclick="toggleFAQ(this)">Can two clinics see each other's data? <span>+</span></button>
+      <div class="faq-answer">No. Each clinic's data is completely isolated. Staff can only see the patients, appointments, and records that belong to their own clinic.</div>
+
+      <button class="faq-btn" onclick="toggleFAQ(this)">What types of clinics can use ClinicDesk? <span>+</span></button>
+      <div class="faq-answer">ClinicDesk works for any outpatient clinic — general practice, specialist clinics, dental, physiotherapy, and more. The patient profile tabs are flexible enough to cover most clinical workflows.</div>
+
+      <button class="faq-btn" onclick="toggleFAQ(this)">Is billing included? <span>+</span></button>
+      <div class="faq-answer">Yes. Each patient profile has a Billing tab where you can create invoices, track payments, and see outstanding balances. Unpaid invoices also appear on the main dashboard.</div>
+
+      <button class="faq-btn" onclick="toggleFAQ(this)">Does it work on mobile? <span>+</span></button>
+      <div class="faq-answer">Yes. ClinicDesk is a web app that works on any device — phone, tablet, or desktop. No installation needed. Open it in any browser.</div>
+
+      <button class="faq-btn" onclick="toggleFAQ(this)">Can I upload patient documents and scan results? <span>+</span></button>
+      <div class="faq-answer">Yes. The Files tab inside each patient profile lets you upload scans, lab reports, referral letters, and any other documents, accessible to all authorised staff in your clinic.</div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- CONTACT -->
+<section id="contact" class="gray-bg">
+  <div class="container">
+    <div class="row g-5 align-items-start">
+      <div class="col-md-5">
+        <h2>Get in touch</h2>
+        <p class="text-muted mt-2" style="line-height:1.7;">Questions about ClinicDesk, pricing, or feature requests — send us a message and we will reply within one business day.</p>
+        <p class="text-muted mt-3" style="font-size:0.9rem;">
+          Or go straight to the app:<br />
+          <a href="https://clinic-app-rouge.vercel.app/dashboard" target="_blank" rel="noopener noreferrer" style="color:#1a73e8; font-weight:600;">clinic-app-rouge.vercel.app &rarr;</a>
+        </p>
+      </div>
+      <div class="col-md-7">
+        <div class="my-card">
+          <form id="contact-form" novalidate onsubmit="submitForm(event)" aria-label="Contact form">
+            <div class="mb-3">
+              <label for="fname" class="form-label">Your name</label>
+              <input type="text" id="fname" class="form-control" placeholder="Dr. Sara Hassan" required />
+            </div>
+            <div class="mb-3">
+              <label for="femail" class="form-label">Email address</label>
+              <input type="email" id="femail" class="form-control" placeholder="sara@clinic.com" required />
+            </div>
+            <div class="mb-3">
+              <label for="frole" class="form-label">I am a</label>
+              <select id="frole" class="form-select">
+                <option value="">Select your role</option>
+                <option>Clinic owner / doctor</option>
+                <option>Nurse or receptionist</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="fmsg" class="form-label">Message</label>
+              <textarea id="fmsg" class="form-control" rows="4" placeholder="Tell us about your clinic or what you need." required></textarea>
+            </div>
+            <button type="submit" class="btn-main w-100">Send message</button>
+            <div id="success-msg" role="alert">Your message has been sent. We will get back to you shortly.</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- TEAM -->
+<section style="padding:60px 0; border-top:1px solid #e0e0e0;">
+  <div class="container">
+    <h2 class="mb-2">The team</h2>
+    <p class="text-muted mb-5">Website built as part of the Web Design &amp; UX course at TU Berlin.</p>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="my-card text-center">
+          <div style="width:56px;height:56px;border-radius:50%;background:#1a73e8;color:#fff;font-size:1.1rem;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;">Y</div>
+          <h3>Yuliia</h3>
+          <p class="text-muted small mt-1">Development</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="my-card text-center">
+          <div style="width:56px;height:56px;border-radius:50%;background:#1a73e8;color:#fff;font-size:1.1rem;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;">N</div>
+          <h3>Nadiia</h3>
+          <p class="text-muted small mt-1">Development</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="my-card text-center">
+          <div style="width:56px;height:56px;border-radius:50%;background:#1a73e8;color:#fff;font-size:1.1rem;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;">A</div>
+          <h3>Ashkan</h3>
+          <p class="text-muted small mt-1">Development</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- IMPRINT -->
+<section id="imprint" style="border-top:1px solid #e0e0e0; background:#f8f9fa; padding:50px 0;">
+  <div class="container">
+    <h2 style="font-size:1.3rem;" class="mb-3">Imprint</h2>
+    <address style="color:#666; font-size:0.88rem; line-height:1.8; font-style:normal;">
+      <strong>ClinicDesk</strong><br />
+      Student project — Web Design &amp; UX, Technische Universit&auml;t Berlin, 2026.<br /><br />
+      Contact: <a href="#contact" style="color:#1a73e8;">contact form above</a>
+    </address>
+    <p style="color:#666; font-size:0.88rem; margin-top:1rem;">
+      ClinicDesk is a real application at <a href="https://clinic-app-rouge.vercel.app/dashboard" target="_blank" rel="noopener noreferrer" style="color:#1a73e8;">clinic-app-rouge.vercel.app</a>. This website is a non-commercial student project.
+    </p>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="d-flex align-items-center gap-2 mb-2">
+          <span class="logo-icon" style="width:22px;height:22px;">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+              <path d="M6 1v10M1 6h10" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <strong style="color:#fff; font-size:1rem;">ClinicDesk</strong>
+        </div>
+        <p>Clinic management software for doctors, nurses, and clinic owners.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Product</h4>
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
+        <a href="features.html">Documentation</a>
+        <a href="https://clinic-app-rouge.vercel.app/dashboard" target="_blank" rel="noopener noreferrer">Open app</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="#contact">Contact</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="#imprint">Imprint</a>
+        <a href="https://github.com/Ashki777" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 ClinicDesk &mdash; Student project, TU Berlin</span>
+      <div>
+        <a href="privacy.html">Privacy</a> &nbsp;&middot;&nbsp;
+        <a href="terms.html">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+
+  /* COOKIE BANNER */
+  function acceptCookies() {
+    document.getElementById('cookie-banner').style.display = 'none';
+    localStorage.setItem('cookies', 'accepted');
+  }
+  if (localStorage.getItem('cookies') === 'accepted') {
+    document.getElementById('cookie-banner').style.display = 'none';
+  }
+
+  /* DARK MODE */
+  function toggleDark() {
+    var isDark = document.body.classList.toggle('dark');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    document.getElementById('dark-toggle').textContent = isDark ? '☀ Light' : '🌙 Dark';
+  }
+  if (localStorage.getItem('theme') === 'dark') {
+    document.body.classList.add('dark');
+    document.getElementById('dark-toggle').textContent = '☀ Light';
+  }
+
+  /* FAQ ACCORDION */
+  function toggleFAQ(btn) {
+    var answer = btn.nextElementSibling;
+    var isOpen = answer.style.display === 'block';
+    document.querySelectorAll('.faq-answer').forEach(function(a) { a.style.display = 'none'; });
+    document.querySelectorAll('.faq-btn span').forEach(function(s) { s.textContent = '+'; });
+    if (!isOpen) {
+      answer.style.display = 'block';
+      btn.querySelector('span').textContent = '×';
+    }
+  }
+
+  /* CONTACT FORM */
+  function submitForm(e) {
+    e.preventDefault();
+    if (!document.getElementById('fname').value || !document.getElementById('femail').value) return;
+    document.getElementById('contact-form').reset();
+    document.getElementById('success-msg').style.display = 'block';
+    setTimeout(function() { document.getElementById('success-msg').style.display = 'none'; }, 5000);
+  }
+
+</script>
+</body>
+</html>
